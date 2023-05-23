@@ -27,7 +27,7 @@ use Inertia\Inertia;
 //     ]);
 // });
 
-Route::get('/', [LandingpageController::class, 'index']);
+Route::get('/', [LandingpageController::class, 'index'])->name('landingpage');
 
 // Route::get('/dashboard', function () {
 //     return Inertia::render('Dashboard');

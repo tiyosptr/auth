@@ -31,13 +31,13 @@ export default function Register() {
 
     return (
         <div
-            className="flex items-center justify-center h-screen"
-            style={{
-                backgroundImage: `url(${Kampus})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-            }}
+            className="flex items-center justify-center h-screen bg-slate-300"
+            // style={{
+            //     backgroundImage: `url(${Kampus})`,
+            //     backgroundSize: "cover",
+            //     backgroundPosition: "center",
+            //     backgroundRepeat: "no-repeat",
+            // }}
         >
             <Head title="Register" />
             <div className="max-w-md w-full mx-auto p-8 bg-white dark:bg-boxdark rounded-md shadow-default border border-stroke dark:border-strokedark">

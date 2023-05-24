@@ -1,5 +1,8 @@
 import React from "react";
 import bangunan from "@/Images/bangunan.jpg";
+import { Link } from "react-scroll";
+
+
 
 export default function Hero() {
     return (
@@ -15,8 +18,8 @@ export default function Hero() {
                             companies around the world use Flowbite to simplify
                             their payment stack.
                         </p>
-                        <a
-                            href="#"
+                        <Link
+                            href={"Start"}
                             className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
                         >
                             Get started
@@ -32,7 +35,7 @@ export default function Hero() {
                                     clip-rule="evenodd"
                                 ></path>
                             </svg>
-                        </a>
+                        </Link>
                     </div>
                     <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
                         <img src={bangunan} alt="mockup" />

@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LandingpageController;
+use App\Http\Controllers\VacancyController;
+use App\Http\Controllers\TalentController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +37,10 @@ Route::get('/', [LandingpageController::class, 'index'])->name('landingpage');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/home', [AuthController::class, 'index'])->name('home');
+Route::get('/vacancy', [VacancyController::class, 'index'])->name('vacancy');
+Route::get('/company', [CompanyController::class, 'index'])->name('company');
+Route::get('/talent', [TalentController::class, 'index'])->name('talent');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

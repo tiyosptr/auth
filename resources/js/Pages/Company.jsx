@@ -65,7 +65,7 @@ const Company = () => {
       }
   
   return (
-    <BrowserRouter basename="/">
+    <BrowserRouter basename="/company">
        <section className="section relative flex p-3 h-screen h-full" >
       <div className="w-1/4">
         <motion.div 
@@ -147,8 +147,8 @@ const Company = () => {
                 <p className="text-lg">{card.Company}</p>
                 {card.address && <p className="text-lg">{card.address}</p>}
               </div>
-              <button to="/Company/Company1" className="mt-3 text-center">
-                <Link href="#" className="inline-block px-4 py-1 text-sm text-white bg-blue-500 rounded-full shadow-md hover:bg-blue-600">VIEW MORE</Link>
+              <button  className="mt-3 text-center">
+                <Link href={route("companyDescription")} className="inline-block px-4 py-1 text-sm text-white bg-blue-500 rounded-full shadow-md hover:bg-blue-600">VIEW MORE</Link>
               </button>
             </div>
           </motion.div>

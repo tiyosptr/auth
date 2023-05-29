@@ -65,8 +65,8 @@ const Talent = () => {
                 <p className="text-lg">{card.address}</p>
                 <p className="text-lg">{card.linkedin}</p>
               </div>
-              <button to="/Talent/Talent1" className="mt-6 text-center">
-                <Link href="#" className="inline-block px-4 py-1 text-sm text-white bg-blue-500 rounded-full shadow-md hover:bg-blue-600">VIEW MORE</Link>
+              <button className="mt-6 text-center">
+                <Link href={route("talentDescription")} className="inline-block px-4 py-1 text-sm text-white bg-blue-500 rounded-full shadow-md hover:bg-blue-600">VIEW MORE</Link>
               </button>
             </div>
           </div>

@@ -2,11 +2,65 @@ import { BrowserRouter } from 'react-router-dom';
 import React, { useState } from "react";
 import Logo from "@/Images/640px-Logo_Politeknik_Negeri_Batam.png";
 import {AiOutlineLeft,AiOutlineRight} from 'react-icons/ai'
-import {  motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from 'react-router-dom';
 // ...
 
 function Vacancy() {
+  const vacancies = [
+    {
+      id: 1,
+      company: "Polibatam Software Team(PS Team)",
+      tipe:"Full time",
+      position: "Software engineer",
+      salary: "5Jt-10Jt",
+      requirements: "Pria/Perempuan Minimal lulusan SMK RPL/Teknik Informatika S1, D4,D3",
+      registrationEnd: "01 Maret 2023"
+    },
+    {
+    id: 2,
+    company: "Polibatam Software Team(PS Team)",
+    tipe:"Full time",
+    position: "Front-end Developer",
+    salary: "5Jt-10Jt",
+    requirements: "Pria/Perempuan Minimal lulusan SMK RPL/Teknik Informatika S1, D4,D3",
+    registrationEnd: "01 Maret 2023"
+  },
+  {
+    id: 3,
+    company: "Polibatam Software Team(PS Team)",
+    tipe:"Full time",
+    position: "Data Scientist",
+    salary: "5Jt-10Jt",
+    requirements: "Pria/Perempuan Minimal lulusan SMK RPL/Teknik Informatika S1, D4,D3",
+    registrationEnd: "01 Maret 2023"
+  },
+  {
+    id: 4,
+    company: "Polibatam Software Team(PS Team)",
+    tipe:"Full time",
+    position: "Back-end Developer",
+    salary: "5Jt-10Jt",
+    requirements: "Pria/Perempuan Minimal lulusan SMK RPL/Teknik Informatika S1, D4,D3",
+    registrationEnd: "01 Maret 2023"
+  },
+  {
+    id: 5,
+    company: "Polibatam Software Team(PS Team)",
+    tipe:"Full time",
+    position: "Full-stack Developer",
+    salary: "5Jt-10Jt",
+    requirements: "Pria/Perempuan Minimal lulusan SMK RPL/Teknik Informatika S1, D4,D3",
+    registrationEnd: "01 Maret 2023"
+  },
+  ];
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+  
   const isLoggedIn = false; // contoh: user belum login
 
   function handleApplyButtonClick() {
@@ -69,10 +123,11 @@ function Vacancy() {
         <section className="section absolute flex h-full">
           <div className="w-1/3 ">
             <motion.div
+            name='awal'
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
               exit={{ opacity: 0, x: -100, transition: { duration: 0.5 } }}
-              className="flex flex-col mt-20 sm:mt-16 items-start bg-white p-4 rounded-lg shadow-md "
+              className="flex flex-col mt-20 ml-5 sm:mt-16 items-start bg-white p-4 rounded-lg shadow-md "
             >
               <motion.div
                 initial={{ opacity: 0, x: -100 }}
@@ -207,183 +262,40 @@ function Vacancy() {
             </motion.div>
           </div>
           <div className="flex flex-wrap lg:mt-16 mt-20 ml-5 justify-center">
-          <motion.div
-  name='lowongan'
-  initial={{ opacity: 0, y: -100 }}
-  animate={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
-  exit={{ opacity: 0, y: -100, transition: { duration: 0.8 } }}
-  className="p-2 w-full max-w-md rounded-xl shadow-xl mr-10 mb-20 relative"
->
-  <div className="absolute top-0 right-0 mt-3 mr-3">
-    <p className="text-sm text-gray-500">Full time</p>
-    <p className="text-sm text-center text-gray-500">Batam</p>
-  </div>
-  <div className="flex items-center justify-center">
-    <div className="w-24 h-24 mr-4 self-start">
-      <img src={Logo} alt="" className="w-20 h-20 rounded-md" />
-    </div>
-    <div className="flex flex-col justify-between w-full">
-      <div className="text-center">
-        <h2 className="text-base font-medium mr-20">Polibatam Software Team(PS Team)</h2>
-        <p className="mt-2 text-lg text-blue-700 font-bold mb-2 mr-20">Software engineer</p>
-        <p className="mt-2 text-lg text-blue-500 text-xl font-bold mb-2 mr-20">5Jt-10Jt</p>
-        <p className="mt-2 mr-20">Pria/Perempuan Minimal lulusan SMK RPL/Teknik Informatika S1, D4,D3</p>
-        <p className="mt-2 text-base mr-20">Registration end 01 Maret 2023</p>
-      </div>
-      <button onClick={handleApplyButtonClick} className="mt-8 text-center mr-20">
-        <Link className="inline-block px-4 text-lg text-white bg-blue-500 rounded-full shadow-md hover:bg-blue-600">Apply</Link>
-      </button>
-    </div>
-  </div>
-</motion.div>
-<motion.div
-  name='lowongan'
-  initial={{ opacity: 0, y: -100 }}
-  animate={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
-  exit={{ opacity: 0, y: -100, transition: { duration: 0.8 } }}
-  className="p-2 w-full max-w-md rounded-xl shadow-xl mr-10 mb-20 relative"
->
-  <div className="absolute top-0 right-0 mt-3 mr-3">
-    <p className="text-sm text-gray-500">Full time</p>
-    <p className="text-sm text-center text-gray-500">Batam</p>
-  </div>
-  <div className="flex items-center justify-center">
-    <div className="w-24 h-24 mr-4 self-start">
-      <img src={Logo} alt="" className="w-20 h-20 rounded-md" />
-    </div>
-    <div className="flex flex-col justify-between w-full">
-      <div className="text-center">
-        <h2 className="text-base font-medium mr-20">Polibatam Software Team(PS Team)</h2>
-        <p className="mt-2 text-lg text-blue-700 font-bold mb-2 mr-20">Software engineer</p>
-        <p className="mt-2 text-lg text-blue-500 text-xl font-bold mb-2 mr-20">5Jt-10Jt</p>
-        <p className="mt-2 mr-20">Pria/Perempuan Minimal lulusan SMK RPL/Teknik Informatika S1, D4,D3</p>
-        <p className="mt-2 text-base mr-20">Registration end 01 Maret 2023</p>
-      </div>
-      <button onClick={handleApplyButtonClick} className="mt-8 text-center mr-20">
-        <Link className="inline-block px-4 text-lg text-white bg-blue-500 rounded-full shadow-md hover:bg-blue-600">Apply</Link>
-      </button>
-    </div>
-  </div>
-</motion.div>
-<motion.div
-  name='lowongan'
-  initial={{ opacity: 0, y: -100 }}
-  animate={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
-  exit={{ opacity: 0, y: -100, transition: { duration: 0.8 } }}
-  className="p-2 w-full max-w-md rounded-xl shadow-xl mr-10 mb-20 relative"
->
-  <div className="absolute top-0 right-0 mt-3 mr-3">
-    <p className="text-sm text-gray-500">Full time</p>
-    <p className="text-sm text-center text-gray-500">Batam</p>
-  </div>
-  <div className="flex items-center justify-center">
-    <div className="w-24 h-24 mr-4 self-start">
-      <img src={Logo} alt="" className="w-20 h-20 rounded-md" />
-    </div>
-    <div className="flex flex-col justify-between w-full">
-      <div className="text-center">
-        <h2 className="text-base font-medium mr-20">Polibatam Software Team(PS Team)</h2>
-        <p className="mt-2 text-lg text-blue-700 font-bold mb-2 mr-20">Software engineer</p>
-        <p className="mt-2 text-lg text-blue-500 text-xl font-bold mb-2 mr-20">5Jt-10Jt</p>
-        <p className="mt-2 mr-20">Pria/Perempuan Minimal lulusan SMK RPL/Teknik Informatika S1, D4,D3</p>
-        <p className="mt-2 text-base mr-20">Registration end 01 Maret 2023</p>
-      </div>
-      <button onClick={handleApplyButtonClick} className="mt-8 text-center mr-20">
-        <Link className="inline-block px-4 text-lg text-white bg-blue-500 rounded-full shadow-md hover:bg-blue-600">Apply</Link>
-      </button>
-    </div>
-  </div>
-</motion.div>
-<motion.div
-  name='lowongan'
-  initial={{ opacity: 0, y: -100 }}
-  animate={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
-  exit={{ opacity: 0, y: -100, transition: { duration: 0.8 } }}
-  className="p-2 w-full max-w-md rounded-xl shadow-xl mr-10 mb-20 relative"
->
-  <div className="absolute top-0 right-0 mt-3 mr-3">
-    <p className="text-sm text-gray-500">Full time</p>
-    <p className="text-sm text-center text-gray-500">Batam</p>
-  </div>
-  <div className="flex items-center justify-center">
-    <div className="w-24 h-24 mr-4 self-start">
-      <img src={Logo} alt="" className="w-20 h-20 rounded-md" />
-    </div>
-    <div className="flex flex-col justify-between w-full">
-      <div className="text-center">
-        <h2 className="text-base font-medium mr-20">Polibatam Software Team(PS Team)</h2>
-        <p className="mt-2 text-lg text-blue-700 font-bold mb-2 mr-20">Software engineer</p>
-        <p className="mt-2 text-lg text-blue-500 text-xl font-bold mb-2 mr-20">5Jt-10Jt</p>
-        <p className="mt-2 mr-20">Pria/Perempuan Minimal lulusan SMK RPL/Teknik Informatika S1, D4,D3</p>
-        <p className="mt-2 text-base mr-20">Registration end 01 Maret 2023</p>
-      </div>
-      <button onClick={handleApplyButtonClick} className="mt-8 text-center mr-20">
-        <Link className="inline-block px-4 text-lg text-white bg-blue-500 rounded-full shadow-md hover:bg-blue-600">Apply</Link>
-      </button>
-    </div>
-  </div>
-</motion.div>
-<motion.div
-  name='lowongan'
-  initial={{ opacity: 0, y: -100 }}
-  animate={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
-  exit={{ opacity: 0, y: -100, transition: { duration: 0.8 } }}
-  className="p-2 w-full max-w-md rounded-xl shadow-xl mr-10 mb-20 relative"
->
-  <div className="absolute top-0 right-0 mt-3 mr-3">
-    <p className="text-sm text-gray-500">Full time</p>
-    <p className="text-sm text-center text-gray-500">Batam</p>
-  </div>
-  <div className="flex items-center justify-center">
-    <div className="w-24 h-24 mr-4 self-start">
-      <img src={Logo} alt="" className="w-20 h-20 rounded-md" />
-    </div>
-    <div className="flex flex-col justify-between w-full">
-      <div className="text-center">
-        <h2 className="text-base font-medium mr-20">Polibatam Software Team(PS Team)</h2>
-        <p className="mt-2 text-lg text-blue-700 font-bold mb-2 mr-20">Software engineer</p>
-        <p className="mt-2 text-lg text-blue-500 text-xl font-bold mb-2 mr-20">5Jt-10Jt</p>
-        <p className="mt-2 mr-20">Pria/Perempuan Minimal lulusan SMK RPL/Teknik Informatika S1, D4,D3</p>
-        <p className="mt-2 text-base mr-20">Registration end 01 Maret 2023</p>
-      </div>
-      <button onClick={handleApplyButtonClick} className="mt-8 text-center mr-20">
-        <Link className="inline-block px-4 text-lg text-white bg-blue-500 rounded-full shadow-md hover:bg-blue-600">Apply</Link>
-      </button>
-    </div>
-  </div>
-</motion.div>
-<motion.div
-  name='lowongan'
-  initial={{ opacity: 0, y: -100 }}
-  animate={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
-  exit={{ opacity: 0, y: -100, transition: { duration: 0.8 } }}
-  className="p-2 w-full max-w-md border-1 rounded-xl shadow-xl mr-10 mb-20 relative"
->
-  <div className="absolute top-0 right-0 mt-3 mr-3">
-    <p className="text-sm text-gray-500">Full time</p>
-    <p className="text-sm text-center text-gray-500">Batam</p>
-  </div>
-  <div className="flex items-center justify-center">
-    <div className="w-24 h-24 mr-4 self-start">
-      <img src={Logo} alt="" className="w-20 h-20 rounded-md" />
-    </div>
-    <div className="flex flex-col justify-between w-full">
-      <div className="text-center">
-        <h2 className="text-base font-medium mr-20">Polibatam Software Team(PS Team)</h2>
-        <p className="mt-2 text-lg text-blue-700 font-bold mb-2 mr-20">Software engineer</p>
-        <p className="mt-2 text-lg text-blue-500 text-xl font-bold mb-2 mr-20">5Jt-10Jt</p>
-        <p className="mt-2 mr-20">Pria/Perempuan Minimal lulusan SMK RPL/Teknik Informatika S1, D4,D3</p>
-        <p className="mt-2 text-base mr-20">Registration end 01 Maret 2023</p>
-      </div>
-      <button onClick={handleApplyButtonClick} className="mt-8 text-center mr-20">
-        <Link className="inline-block px-4 text-lg text-white bg-blue-500 rounded-full shadow-md hover:bg-blue-600">Apply</Link>
-      </button>
-    </div>
-  </div>
-</motion.div>
-
-          </div>
-          <div className="absolute flex bg-white rounded-lg justify-center lg:right-1/4 left-1/3 top-full lg:mt-[460px] mt-[2460px] lg:mr-20">
+          {vacancies.map((vacancy) => (
+            <motion.div
+              key={vacancy.id}
+              name='lowongan'
+              initial={{ opacity: 0, y: -100 }}
+              animate={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
+              exit={{ opacity: 0, y: -100, transition: { duration: 0.8 } }}
+              className="p-3 h-64 border-2 rounded-xl shadow-xl ml-20 mb-20 relative"
+            >
+              <div className="absolute top-0 right-0 mt-3 mr-10">
+                <p className="text-sm text-gray-500">{vacancy.tipe}</p>
+                <p className="text-sm text-center text-gray-500">Batam</p>
+              </div>
+              <div className="flex flex-col lg:flex-row items-center justify-center">
+                <div className="w-16 lg:ml-5 h-10 self-start">
+                  <img src={Logo} alt="" className="w-20 h-16 rounded-md" />
+                </div>
+                <div className="flex flex-col justify-between w-full">
+                  <div className="text-center lg:text-left">
+                    <h2 className="text-base font-medium lg:mr-20">{vacancy.company}</h2>
+                    <p className="mt-2 text-lg text-blue-700 font-bold mb-2 lg:mr-20">{vacancy.position}</p>
+                    <p className="mt-2 text-lg text-blue-500 text-xl font-bold mb-2 lg:mr-20">{vacancy.salary}</p>
+                    <p className="mt-2 lg:mr-20">{vacancy.requirements}</p>
+                    <p className="mt-2 text-base lg:mr-20">Registration end {vacancy.registrationEnd}</p>
+                  </div>
+                  <button onClick={handleApplyButtonClick} className="mt-3 lg:mr-20 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                    Apply
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+          <div className="absolute flex bg-white rounded-lg justify-center lg:right-1/4 left-1/3 top-full bottom-0 mb-10 lg:mt-[1050px] mt-[2460px] lg:mr-20">
             <button onClick={Back} className="h-12 border-2 border-r-0 border-blue-600 px-4 rounded-l-lg hover:bg-blue-600 hover:text-white">
               <AiOutlineLeft />
             </button>

@@ -7,7 +7,6 @@ import Tfirst from "@/Components/Tfirst"
 import Cfirst from "@/Components/Cfirst"
 import { Head } from "@inertiajs/react";
 import React from "react";
-import Vacancy from "@/Pages/Vacancy";
 
 export default function Landingpage(props) {
     return (
@@ -21,10 +20,6 @@ export default function Landingpage(props) {
                 <Vfirst />
                 <Tfirst />
                 <Cfirst />
-            </div>
-            <div>
-                <Navbar />
-                <Vacancy />
             </div>
         </div>
     );
